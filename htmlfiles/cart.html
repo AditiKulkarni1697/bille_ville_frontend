@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <style>
+      #main {
+        width: 90vw;
+        display: flex;
+        margin: auto;
+      }
+      #cont {
+        margin: auto;
+      }
+      #container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <!-- navbar -->
+      <nav class="navbar text-bg-dark p-3">
+        <div class="container-fluid" style="height: 100px">
+          <img src="../images/Bille Ville.png" width="80px" />
+          <form class="d-flex" role="search">
+            <h4 id="userName"></h4>
+            <!-- <a class="btn btn-secondary" href="./login.html">Login</a>
+            <a class="btn btn-secondary" href="./signup.html">SignUp</a> -->
+            <a class="btn btn-secondary" href="../index.html">HomePage</a>
+            <a class="btn btn-secondary" href="./userAccount.html">Account</a>
+            <!-- <button class="btn btn-outline-success" type="submit"> -->
+
+            <!-- </button> -->
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="main">
+        <div id="cont"></div>
+        <div id="bill"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: black">
+      <!-- Grid container -->
+      <div class="container text-center" style="margin: auto">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">About us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Products</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Awards</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Help</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Contact</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
+
+        <hr class="my-5" />
+
+        <!-- Section: Text -->
+        <section class="mb-5">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+              <p>
+                Discover the ultimate online shopping experience with our
+                e-commerce website. Shop from the comfort of your own home and
+                browse through our vast selection of products from trusted
+                brands and sellers. With easy navigation and secure payment
+                options, we make online shopping a breeze. Start shopping today
+                and experience the convenience of our e-commerce website.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Text -->
+
+        <!-- Section: Social -->
+        <section class="text-center mb-5">
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Section: Social -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">BilleVille.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const token = JSON.parse(sessionStorage.getItem("key"));
+    const userName = document.getElementById("userName");
+    const userID = JSON.parse(sessionStorage.getItem("userID"));
+    fetch(`https://bille-ville-backend.onrender.com/${userID}`)
+      .then((res) => res.json())
+      .then((res) => {
+        userName.innerHTML = `Hi,${res[0].first_name}` + " ";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    fetch("https://bille-ville-backend.onrender.com/cart", {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+          console.log(res)
+          display(res)
+          billCard()
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+        
+        const cont = document.getElementById("cont");
+        const bill = document.getElementById("bill");
+        /////////////////////items///////////////////////////
+        const container = document.createElement("div");
+        container.setAttribute("id","container")
+        container.className = "container text-center";
+        let total = 0;
+        let items = 0;
+        // sessionStorage.setItem("total", total)
+       // const row = document.createElement("div");
+       // row.className = "row row-cols-1 row-cols-sm-2 row-cols-md-4";
+        ////////////////////individual item///////////////////////
+        function display(data) {
+          container.innerHTML = "";
+          total = 0;
+          sessionStorage.setItem("total", total);
+
+          items = 0;
+          sessionStorage.setItem("items", items);
+          sessionStorage.setItem("cart", JSON.stringify(data));
+          console.log(data,"data")
+          data.forEach((ele) => {
+           
+            items++;
+            console.log(items,total)
+            sessionStorage.setItem("items", items);
+            const card = document.createElement("div");
+            card.className = "card";
+            card.style.width = "18rem";
+            const img = document.createElement("img");
+            img.className = "card-img-top";
+            img.setAttribute("alt", "...");
+            img.setAttribute("src", ele.image);
+            img.setAttribute("style", "width:150px");
+            img.setAttribute("style", "");
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+
+            const cardTitle = document.createElement("h5");
+            cardTitle.className = "card-title";
+            cardTitle.innerHTML = ele.name;
+
+            const cardText1 = document.createElement("p");
+            cardText1.className = "card-text";
+            cardText1.innerHTML = ele.sizing;
+
+            const cardText = document.createElement("p");
+            cardText.className = "card-text";
+            cardText.innerHTML = "INR" + " " + ele.price;
+            total += ele.price;
+            sessionStorage.setItem("total", total);
+            
+            const btn = document.createElement("button");
+            btn.className = "btn btn-danger";
+            btn.innerHTML = "DELETE";
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              fetch(`https://bille-ville-backend.onrender.com/cart/delete/${ele._id}`, {
+                method: "DELETE",
+                headers: {
+                  authorization: token,
+                },
+              })
+                .then((res) => res.json())
+                .then((res) => {
+                  items--
+                  sessionStorage.setItem("items", items);
+                  total -= ele.price
+                  sessionStorage.setItem("total",total)
+                  //total()
+                  window.location.reload()
+                })
+                .catch((err) => console.log(err));
+            });
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            cardBody.appendChild(cardText1);
+            cardBody.appendChild(btn);
+
+            card.appendChild(img);
+            card.appendChild(cardBody);
+            // row.appendChild(card);
+            container.appendChild(card);
+
+          });
+        }
+        //display();
+        ///////////////////////////////////////////////////////////////
+        
+        /////////////bill//////////////
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.style.width = "18rem";
+        
+        function billCard(){
+        card.innerHTML = ""
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.className = "card-title";
+
+        const cardSubtitle = document.createElement("h6");
+        cardSubtitle.className = "card-subtitle mb-2 text-body-secondary";
+
+        const cardText = document.createElement("p");
+        cardText.className = "card-text";
+
+        
+        let SubTotal = sessionStorage.getItem("total");
+        cardTitle.textContent = "SubTotal:" + " " + "INR" + " " + SubTotal;
+
+        
+        let item_count = sessionStorage.getItem("items");
+        cardSubtitle.textContent = "Items:" + " " + item_count;
+
+        console.log(SubTotal,item_count)
+
+        
+        cardText.textContent = "Taxes:" + " " + "INR" + " " + "25";
+
+        const cardText1 = document.createElement("p");
+        cardText1.className = "card-text";
+        cardText1.textContent = "Discount:" + " " + "- INR 500";
+
+        const cardTitle2 = document.createElement("h5");
+        cardTitle2.className = "card-title";
+        if(item_count>0){
+           console.log(item_count)
+        cardTitle2.textContent =
+          "Total:" + " " + "INR" + " " + (+SubTotal + 25 - 500);
+        }
+        else{
+          cardTitle2.textContent =
+          "Total:" + " " + "INR" + " " + (SubTotal);
+        }
+      
+      
+        const cardBack = document.createElement("a");
+        cardBack.className = "btn btn-primary";
+        cardBack.innerHTML = "BACK";
+        cardBack.setAttribute("href", "../index.html");
+
+        const cardPay = document.createElement("button");
+        cardPay.className = "btn btn-success";
+        cardPay.innerHTML = "BUY";
+        cardPay.addEventListener("click", () => {
+          window.location.href = "payment.html";
+        });
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardSubtitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(cardText1);
+        cardBody.appendChild(cardTitle2);
+        cardBody.appendChild(cardBack);
+        cardBody.appendChild(cardPay);
+
+        card.appendChild(cardBody);
+      }
+      billCard()
+        ////////////////////////////////////////////
+        cont.appendChild(container);
+        bill.appendChild(card);
+      
+      
+  </script>
+</html>

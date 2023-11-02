@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* #size {
+        display: grid;
+        grid-template-columns: (1fr 1fr 1fr);
+      } */
+      .card {
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <!-- navbar -->
+      <nav class="navbar text-bg-dark p-3">
+        <div class="container-fluid" style="height: 100px">
+          <img src="../images/Bille Ville.png" width="80px" />
+          <form class="d-flex" role="search">
+            <h4 id="userName"></h4>
+            <!-- <a class="btn btn-secondary" href="./login.html">Login</a>
+            <a class="btn btn-secondary" href="./signup.html">SignUp</a> -->
+            <a class="btn btn-secondary" href="../index.html">HomePage</a>
+            <a class="btn btn-secondary" href="./cart.html">Cart</a>
+            <a class="btn btn-secondary" href="./userAccount.html">Account</a>
+            
+            <!-- <button class="btn btn-outline-success" type="submit"> -->
+
+            <!-- </button> -->
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="card m-5">
+        <div class="row g-5">
+          <div class="col-md-4">
+            <img
+              class="img-fluid rounded-start"
+              alt="..."
+              id="image"
+              width="100%"
+            />
+          </div>
+          <div class="col-md-3">
+            <div class="card-body">
+              <h5 class="card-title" id="name"></h5>
+              <p class="card-text" id="details"></p>
+              <p class="card-text" id="rating">
+                <small class="text-body-secondary"></small>
+              </p>
+              <p class="card-text" id="price">
+                <small class="text-body-secondary"></small>
+              </p>
+              <p class="text-body-secondary">Choose a size</p>
+              <div class="card-text">
+                <div id="size">
+                  <div><a id="size0" href="#">0</a></div>
+                  <div><a id="size2" href="#">2</a></div>
+                  <div><a id="size4" href="#">4</a></div>
+                </div>
+              </div>
+              <div>
+                <button id="bag" class="btn btn-danger">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card-body">
+              <h5 class="card-title" id="name">SIZE & FIT</h5>
+              <ul class="card-text" id="details">
+                <li>
+                  Fits true to size, order your normal size Designed to hit at
+                  mid
+                </li>
+                calf
+                <li>
+                  Approx. 49.25" from back of neck to hem, based on a size small
+                </li>
+                <li>
+                  Model measurements: 5'10" height, 33.5" bust, 23.5" waist,
+                  34.5" hips, wearing a size small
+                </li>
+              </ul>
+              <h5>MATERIAL & CARE</h5>
+              <ul>
+                <li>96% viscose/4% elastane</li>
+                <li>Dry clean or machine wash</li>
+              </ul>
+              <h5>SHIPPING & RETURNS</h5>
+              <ul>
+                <li>Please call customer service for returns.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: black">
+      <!-- Grid container -->
+      <div class="container text-center" style="margin: auto">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">About us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Products</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Awards</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Help</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Contact</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
+
+        <hr class="my-5" />
+
+        <!-- Section: Text -->
+        <section class="mb-5">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+              <p>
+                Discover the ultimate online shopping experience with our
+                e-commerce website. Shop from the comfort of your own home and
+                browse through our vast selection of products from trusted
+                brands and sellers. With easy navigation and secure payment
+                options, we make online shopping a breeze. Start shopping today
+                and experience the convenience of our e-commerce website.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Text -->
+
+        <!-- Section: Social -->
+        <section class="text-center mb-5">
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Section: Social -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">BilleVille.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const id = sessionStorage.getItem("id");
+    const token = JSON.parse(sessionStorage.getItem("key"));
+    const userName = document.getElementById("userName");
+    const userID = JSON.parse(sessionStorage.getItem("userID"));
+    fetch(`https://bille-ville-backend.onrender.com/user/${userID}`)
+      .then((res) => res.json())
+      .then((res) => {
+        userName.innerHTML = `Hi,${res[0].first_name}` + " ";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    fetch(`https://bille-ville-backend.onrender.com/product/${id}`)
+      .then((res) => res.json())
+      .then((res) => {
+        const image = document.getElementById("image");
+        image.setAttribute("src", res[0].image);
+        const name = document.getElementById("name");
+        name.innerHTML = res[0].name;
+        const details = document.getElementById("details");
+        details.innerHTML = res[0].details;
+        const rating = document.getElementById("rating");
+        rating.innerHTML = res[0].rating;
+        const price = document.getElementById("price");
+        price.innerHTML = res[0].price;
+        const size0 = document.getElementById("size0");
+        if (res[0].sizing[0] > 0) {
+          size0.innerHTML = "Size0 : In Stock";
+          size0.setAttribute("style", "color:green");
+          size0.addEventListener("click", (e) => {
+            const product = {
+              sizing: {
+                0: res[0].sizing[0] - 1,
+                2: res[0].sizing[2],
+                4: res[0].sizing[4],
+              },
+            };
+            fetch(`https://bille-ville-backend.onrender.com/product/update/${res[0]._id}`, {
+              method: "PATCH",
+              headers: {
+                "content-type": "application/json",
+                authorization: token,
+              },
+              body: JSON.stringify(product),
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                sessionStorage.setItem("size", "size0");
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          });
+        } else {
+          size0.innerHTML = "Size0: Out of Stock";
+          size0.setAttribute("style", "color:red");
+        }
+
+        const size2 = document.getElementById("size2");
+        if (res[0].sizing[2] > 0) {
+          size2.innerHTML = "Size2 : In Stock";
+          size2.setAttribute("style", "color:green");
+          size2.addEventListener("click", (e) => {
+            const product = {
+              sizing: {
+                0: res[0].sizing[0],
+                2: res[0].sizing[2] - 1,
+                4: res[0].sizing[4],
+              },
+            };
+            fetch(`https://bille-ville-backend.onrender.com/product/update/${res[0]._id}`, {
+              method: "PATCH",
+              headers: {
+                "content-type": "application/json",
+                authorization: token,
+              },
+              body: JSON.stringify(product),
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                sessionStorage.setItem("size", "size2");
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          });
+        } else {
+          size2.innerHTML = "Size2: Out of Stock";
+          size2.setAttribute("style", "color:red");
+        }
+        const size4 = document.getElementById("size4");
+        if (res[0].sizing[4] > 0) {
+          size4.innerHTML = "Size4 : In Stock";
+          size4.setAttribute("style", "color:green");
+          size4.addEventListener("click", (e) => {
+            const product = {
+              sizing: {
+                0: res[0].sizing[0],
+                2: res[0].sizing[2],
+                4: res[0].sizing[4] - 1,
+              },
+            };
+            fetch(`https://bille-ville-backend.onrender.com/product/update/${res[0]._id}`, {
+              method: "PATCH",
+              headers: {
+                "content-type": "application/json",
+                authorization: token,
+              },
+              body: JSON.stringify(product),
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                sessionStorage.setItem("size", "size0");
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          });
+        } else {
+          size4.innerHTML = "Size4: Out of Stock";
+          size4.setAttribute("style", "color:red");
+        }
+        const bag = document.getElementById("bag");
+        bag.addEventListener("click", (e) => {
+          e.preventDefault();
+          const token = JSON.parse(sessionStorage.getItem("key"));
+          //console.log(token, "product frontend");
+          const size = sessionStorage.getItem("size");
+          res[0].sizing = size;
+          fetch("https://bille-ville-backend.onrender.com/cart/add", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: token, // add token obtained from login as header in post route
+            },
+            body: JSON.stringify(res[0]),
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              console.log(res)
+              alert("product added to cart")
+             // window.location.href = "cart.html";
+            })
+            .catch((err) => console.log(err,"err"));
+        });
+        //////////////////////add reviews here, when reviews are created fron user account feed back form ///////////
+      });
+  </script>
+</html>
